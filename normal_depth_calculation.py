@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 
 
 class MyApp():
@@ -57,11 +58,14 @@ class MyApp():
 
     def calculate_dep(self):
         # get each value entered in each Entry
-
-        self.slope = float(self.slope_entry.get())
-        self.manning = float(self.manning_entry.get())
-        self.flow = float(self.flow_entry.get())
-        self.width = float(self.width_entry.get())
+        try:
+            self.slope = float(self.slope_entry.get())
+            self.manning = float(self.manning_entry.get())
+            self.flow = float(self.flow_entry.get())
+            self.width = float(self.width_entry.get())
+        except ValueError:
+            messagebox.showerror("invalid input")
+            return
 
         self.product_qnj = self.flow * self.manning / self.slope ** (1 / 2)
 
