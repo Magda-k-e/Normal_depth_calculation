@@ -18,7 +18,7 @@ class MyApp():
     def widgets(self):
         # slope J
         # create label widget for slope
-        self.slope_label = tk.Label(self.root, text="Enter slope value- J:", font=self.fnt, fg='black')
+        self.slope_label = tk.Label(self.root, text="Enter slope value J:", font=self.fnt, fg='black')
         # place label with a space of 10 px above and 10 px below label
         self.slope_label.pack(pady=10)
 
@@ -28,21 +28,21 @@ class MyApp():
         self.slope_entry.focus_set()
 
         # Manning's n
-        self.manning_label = tk.Label(self.root, text="Enter manning's n:", font=self.fnt, fg='black')
+        self.manning_label = tk.Label(self.root, text="Enter Manning's n:", font=self.fnt, fg='black')
         self.manning_label.pack(pady=10)
 
         self.manning_entry = tk.Entry(self.root, font=self.fnt, width=20, bg='lightgreen', fg='blue')
         self.manning_entry.pack(fill='both', expand=1)
 
         # Flow Q
-        self.flow_label = tk.Label(self.root, text="Enter flow- Q in m^3/s:", font=self.fnt, fg='black')
+        self.flow_label = tk.Label(self.root, text="Enter flow Q in m^3/s:", font=self.fnt, fg='black')
         self.flow_label.pack(pady=10)
 
         self.flow_entry = tk.Entry(self.root, font=self.fnt, width=20, bg='lightgreen', fg='blue')
         self.flow_entry.pack(fill='both', expand=1)
 
         # Width b
-        self.width_label = tk.Label(self.root, text="Enter width- b in m:", font=self.fnt, fg='black')
+        self.width_label = tk.Label(self.root, text="Enter width b in m:", font=self.fnt, fg='black')
         self.width_label.pack(pady=10)
 
         self.width_entry = tk.Entry(self.root, font=self.fnt, width=20, bg='lightgreen', fg='blue')

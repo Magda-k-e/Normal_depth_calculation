@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f432830c-b56a-4be1-8e2d-146f5b8e1e27" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/normal_depth_calculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/normal_depth_calculation.py" afterDir="false" />
@@ -33,7 +36,7 @@
     "Python.normal_depth_calculation.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "main"
   }
 }]]></component>
   <component name="SharedIndexes">
