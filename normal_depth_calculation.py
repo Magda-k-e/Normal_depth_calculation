@@ -53,8 +53,13 @@ class MyApp():
         self.submit_button = tk.Button(self.root, text="Calculate", font=self.fnt, command=self.calculate_dep)
         self.submit_button.pack(pady=20)
 
+        # result label
         self.result_label = tk.Label(self.root, text="Calculated normal depth:", font=self.fnt, fg='green')
         self.result_label.pack(pady=10)
+
+        # count iterations label
+        self.iteration_label = tk.Label(self.root, text=f"Iteration: 0", font='Arial 20', fg='black')
+        self.iteration_label.pack(pady=10)
 
     def calculate_dep(self):
         # get each value entered in each Entry
@@ -73,8 +78,10 @@ class MyApp():
                 (self.width * self.norm_dep) / (self.width + 2 * self.norm_dep)) ** (2 / 3)
 
         tolerance = 1e-2
+        iteration_limit = 10000
+        iterations = 0
 
-        while abs(self.product_by - self.product_qnj) > tolerance:
+        while abs(self.product_by - self.product_qnj) > tolerance and iterations < iteration_limit:
             if self.product_by > self.product_qnj:
                 self.norm_dep -= 0.005
             else:
@@ -83,10 +90,14 @@ class MyApp():
             # calculate product_by with new normal depth
             self.product_by = (self.width * self.norm_dep) * (
                     (self.width * self.norm_dep) / (self.width + 2 * self.norm_dep)) ** (2 / 3)
-
+            iterations += 1
+            self.iteration_label.config(text=f"Iteration: {iterations}")
             self.root.update_idletasks()
 
-            self.result_label.config(text=f"Calculated normal depth:{self.norm_dep:.2f}")
+            if iterations >= iteration_limit:
+                self.result_label.config(text="reached iteration limit")
+            else:
+                self.result_label.config(text=f"Calculated normal depth:{self.norm_dep:.2f}")
 
 
 root = tk.Tk()
