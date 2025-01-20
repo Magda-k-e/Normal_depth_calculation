@@ -68,8 +68,8 @@ class MyApp():
             self.manning = float(self.manning_entry.get())
             self.flow = float(self.flow_entry.get())
             self.width = float(self.width_entry.get())
-        except ValueError:
-            messagebox.showerror("invalid input")
+        except ValueError as e:
+            messagebox.showerror("invalid input", f"Error: {str(e)}\nPlease enter numeric values")
             return
 
         self.product_qnj = self.flow * self.manning / self.slope ** (1 / 2)
