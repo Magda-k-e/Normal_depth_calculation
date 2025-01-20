@@ -13,7 +13,7 @@ class MyApp():
         self.slope = None
         self.manning = None
         self.flow = None
-        self.norm_dep = 1
+        self.norm_dep = 1  # arbitrary first guess
         self.widgets()
 
     def widgets(self):
@@ -54,7 +54,7 @@ class MyApp():
         self.submit_button.pack(pady=20)
 
         # result label
-        self.result_label = tk.Label(self.root, text="Calculated normal depth:", font=self.fnt, fg='green')
+        self.result_label = tk.Label(self.root, text="Calculated normal depth:", font=self.fnt, fg='blue')
         self.result_label.pack(pady=10)
 
         # count iterations label
