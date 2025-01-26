@@ -7,8 +7,7 @@ This application calculates the normal depth for uniform flow in an open rectang
 - Calculation of normal depth iteratively.
 - Display of the iteration count and the resulting normal depth.
 - Error handling to ensure numerical inputs.
-Requirements
-The script requires Python 3.x.
+
 
 ## Manning's equation
 ![image](https://github.com/user-attachments/assets/0d4b6460-2aed-4733-95f1-17efddc2f1b7)
